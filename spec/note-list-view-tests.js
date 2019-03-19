@@ -46,3 +46,18 @@
   };
   testNoteListViewGetsHTML();
 })(this);
+
+(function(exports) {
+  function testNoteListViewGetsHTMLwithZeroNotes() {
+    var noteList = new NoteList()
+    var noteListView = new NoteListView(noteList);
+    var htmlStr = "<ul></ul>"
+    if (noteListView.showHTML() === htmlStr) {
+      console.log("Clear: testNoteListViewGetsHTMLwithZeroNotes");
+    }
+    else {
+      throw new Error("Error: testNoteListViewGetsHTMLwithZeroNotes")
+    }
+  };
+  testNoteListViewGetsHTMLwithZeroNotes();
+})(this);
